@@ -97,7 +97,7 @@
       <div class="w-8/12 flex justify-end">
         <img
           class="3xl:h-[800px] 2xl:h-[650px] xl:h-[550px] lg:h-[550px] md:h-[450px] sm:h-[350px]"
-          :src="process.env.BASE_URL + 'lee_profile_2025.png'"
+          :src="'/lee_profile_2025.png'"
           alt="User image"
         />
       </div>
