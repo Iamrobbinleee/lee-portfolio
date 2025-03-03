@@ -3,6 +3,6 @@ import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === "production" ? "/lee-portfolio/" : "/",
+  base: import.meta.env.MODE === "production" ? "/lee-portfolio/" : "/",
   plugins: [vue()],
 });
