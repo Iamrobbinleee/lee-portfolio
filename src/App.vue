@@ -4,14 +4,7 @@
     <nav
       class="container px-6 mx-auto md:flex md:justify-between md:items-center"
     >
-      <div class="flex items-center justify-between">
-        <div class="relative w-16 h-16">
-          <img
-            class="rounded-full border border-gray-100 shadow-sm"
-            src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=512&h=512&q=80"
-            alt="user image"
-          />
-        </div>
+      <div class="flex items-center justify-between mb-10">
         <!-- Mobile menu button -->
         <div @click="showMenu = !showMenu" class="flex md:hidden">
           <button
@@ -28,17 +21,44 @@
         </div>
       </div>
       <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-      <ul
-        :class="showMenu ? 'flex' : 'hidden'"
-        class="flex-col items-end mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+      <div
+        class="fixed top-0 left-0 w-full bg-white z-50 flex items-center justify-between shadow-md p-4"
       >
-        <li class="menu-button"><a href="#">Home</a></li>
-        <li class="menu-button"><a href="#work" v-smooth-scroll>Works</a></li>
-        <li class="menu-button">
-          <a href="#testimonial" v-smooth-scroll>Testimonials</a>
-        </li>
-        <li class="menu-button"><a href="#about" v-smooth-scroll>About</a></li>
-      </ul>
+        <span class="text-2xl">👨🏻‍💻</span>
+        <button @click="showMenu = !showMenu" class="flex md:hidden">
+          <span class="text-2xl">☰</span>
+        </button>
+
+        <div
+          v-if="showMenu"
+          class="absolute top-16 right-0 w-full max-w-xs bg-white shadow-md z-50 md:hidden"
+        >
+          <ul class="flex flex-col space-y-4 p-4">
+            <li><a href="#" class="text-xl">Home</a></li>
+            <li><a href="#work" v-smooth-scroll class="text-xl">Works</a></li>
+            <li>
+              <a href="#testimonial" v-smooth-scroll class="text-xl"
+                >Tech Stacks</a
+              >
+            </li>
+            <li><a href="#about" v-smooth-scroll class="text-xl">Others</a></li>
+          </ul>
+        </div>
+
+        <ul
+          :class="showMenu ? 'hidden' : 'hidden md:flex'"
+          class="flex flex-col md:flex-row md:space-x-10 space-y-4 md:space-y-0"
+        >
+          <li class="menu-button"><a href="#">Home</a></li>
+          <li class="menu-button"><a href="#work" v-smooth-scroll>Works</a></li>
+          <li class="menu-button">
+            <a href="#testimonial" v-smooth-scroll>Tech Stacks</a>
+          </li>
+          <li class="menu-button">
+            <a href="#about" v-smooth-scroll>Others</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <!-- End Navbar -->
 
@@ -47,19 +67,19 @@
         <h3
           class="hello-button text-gray-700 w-fit md:py-3 md:px-5 py-1 px-2 rounded-lg 3xl:text-3xl 2xl:text-xl lg:text-xl md:text-md text-sm font-semibold font-work_sans"
         >
-          👋 Hola,
+          👋 Hello there,
         </h3>
         <h1
           class="3xl:text-8xl 2xl:text-7xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-xl font-Eczar font-bold leading-tight text-gray-700"
         >
-          It's
+          I'm
           <a
             href="https://www.linkedin.com/"
             target="_blank"
             class="text-black hover:underline"
           >
-            Aliza Khan</a
-          >🙇‍♀️<br />Creative Designer and Storyteller
+            Lee</a
+          >👨🏻‍💻<br />A Full-stack Web Developer
         </h1>
 
         <div class="md:flex gap-1 md:gap-10">
@@ -77,8 +97,8 @@
       <div class="w-8/12 flex justify-end">
         <img
           class="3xl:h-[800px] 2xl:h-[650px] xl:h-[550px] lg:h-[550px] md:h-[450px] sm:h-[350px]"
-          src="./assets/profile-female.png"
-          alt="user image"
+          :src="'/lee_profile_2025.png'"
+          alt="User image"
         />
       </div>
     </div>
@@ -361,11 +381,11 @@
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        showMenu: false,
-      }
-    },
-  }
+export default {
+  data() {
+    return {
+      showMenu: false,
+    };
+  },
+};
 </script>
