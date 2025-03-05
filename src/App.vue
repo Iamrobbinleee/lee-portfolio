@@ -162,11 +162,14 @@
 
     <div class="card about_me_card">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title item">My Hobbies?</h4>
+        <h4 class="project-title item">My Hobbies? Education?</h4>
         <p class="font-work_sans pr-12 text-justify">
           I love to play online games like mmorpg, strategic and collaborative
           games. I also play guitar and I love to sing while playing the
-          instrument.
+          instrument. <br /><br />
+          I graduated at First Asia Institute of Technology and Humanities
+          (FAITH Colleges) with Bachelor of Science in Information Technology
+          located at Tanauan City, Batangas, Philippines.
         </p>
         <!-- <button class="text-sky-800 font-bold text-2xl tracking-wider">
           View Case Study
@@ -182,12 +185,28 @@
 
     <div class="card about_me_card">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title">How's study?</h4>
-        <p class="font-work_sans pr-12 text-justify">
-          I graduated at First Asia Institute of Technology and Humanities
-          (FAITH Colleges) with Bachelor of Science in Information Technology
-          located at Tanauan City, Batangas, Philippines.
-        </p>
+        <h4 class="project-title">Tech Stacks</h4>
+        <ul class="font-work_sans pr-12 text-justify">
+          <li>
+            1. HTML, CSS, Tailwind CSS, JavaScript, Vue JS, Node JS, Native PHP,
+            Laravel, Docker, MySQL, SQL, AWS environment including DynamoDB,
+            EC2, CodeCommit and CodeDeploy.
+          </li>
+          <li>2. Git version control and Github.</li>
+          <li>
+            3. Jira (Ticketing System), Agile, Data analyzation, project testing
+            and solutions.
+          </li>
+          <li>
+            4. Microsoft applications. (PPT, Excel, Word) and other related
+            tools.
+          </li>
+          <li>
+            5. XAMPP, Laragon, Insomnia, VS Code, Sublime Merge, MySQL
+            Workbench, PHPMyAdmin, Photoshop and Canva.
+          </li>
+        </ul>
+        <!-- <p class="font-work_sans pr-12 text-justify">AASDA</p> -->
         <!-- <button class="text-sky-800 font-bold text-2xl tracking-wider">
           View Case Study
         </button> -->
@@ -237,8 +256,18 @@
               class="relative py-12 lg:py-24 px-8 lg:px-16 text-gray-700 leading-relaxed"
             >
               <p>
-                {{ slide.text }}
+                {{ slide.title }}
               </p>
+              <br />
+              <ul>
+                <li
+                  class="text-justify"
+                  v-for="(item, index) in slide.list"
+                  :key="index"
+                >
+                  {{ item }}
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -287,30 +316,41 @@
       alt="user image"
     />
     <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-      <h4 class="project-title item">Sheepify States</h4>
-      <p class="font-work_sans">
-        I am Salman Khan from Lucknow, India. I am working in an Indian Startup
-        as a User Eperience Designer for the past two years.
-        <br />
-        I got featured various times on many big and small marketplaces,
-        portfolio websites and blogs. I also received some awards and
-        recognitions from some of the big and small award companies. Besides
-        designing, I like to watch anime, read books and solve sudoku.
-      </p>
-      <button class="text-sky-800 font-bold text-2xl tracking-wider">
+      <h4 class="project-title item text-white" style="color: white">
+        PROJECTS, CERTIFICATIONS & SEMINARS
+      </h4>
+      <ul class="font-work_sans text-justify text-white">
+        <li>1. Accessories Reservation System</li>
+        <li>
+          2. Recruitment Monitoring System integrated with SMS API and
+          Analytical Reports.
+        </li>
+        <li>3. Diwa Dashboard SMS (School Management System).</li>
+        <li>4. Diwa Checkbox LMS (Gamified Assessment Portal System).</li>
+        <li>5. Santo Tomas Scholar 2019 - 2023.</li>
+        <li>6. Dean's Lister and President's Lister 2020 - 2023.</li>
+        <li>
+          7. FAITH Psychology Society - Mental Health Awareness Week Celebration
+          2023
+        </li>
+        <li>8. iSite 2020 and 2022.</li>
+        <li>9. Role Model of the School Year 2017.</li>
+      </ul>
+      <!-- <button class="text-sky-800 font-bold text-2xl tracking-wider">
         View Case Study
-      </button>
+      </button> -->
     </div>
   </div>
 
   <div class="banner-1 flex h-full items-center">
     <div class="w-7/12 p-12">
       <h2 class="text-gray-700 md:text-6xl text-2xl font-Eczar mb-5 font-bold">
-        Let’s work together and make everything super cute and super useful.
+        Let’s work together and make everything possible!
       </h2>
-      <a class="underline text-2xl text-blue-600 font-work_sans"
-        >📧 hire@author.com</a
-      >
+      <ul class="font-work_sans pr-12 text-justify">
+        <li>&nbsp;☎ Contact Number: 0976-006-9290</li>
+        <li>📧 Email: leerobinroxas8@gmail.com</li>
+      </ul>
     </div>
     <div class="w-5/12 pr-28">
       <div class="flex flex-wrap justify-end gap-2">
@@ -403,17 +443,28 @@ const slides = ref([
   {
     image:
       "https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png",
-    text: "As Slack grows rapidly, using Stripe helps them scale payments easily.",
+    title: "Junior Developer",
+    list: [
+      "🏢 Diwa Learning Systems Inc.",
+      "📌 PDCP Centre, V.A. Rufino Cor. Salcedo Village, Makati City, Philippines",
+      "🗓️ July 24, 2023 - Present",
+      `📝 Full-stack Web Developer (Laravel). Handling client-based projects. Making reports, analyzation, testing and solutions for the project objectives based on the client
+specifications. Daily/Weekly scrum, retrospective and sprint planning/meetings.
+`,
+    ],
   },
   {
     image:
       "https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png",
-    text: "Technology is evolving, and we must keep up with the changes.",
-  },
-  {
-    image:
-      "https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png",
-    text: "Coding is an art of logic and problem-solving.",
+    title: "Web Developer Intern",
+    list: [
+      "🏢 Diwa Learning Systems Inc",
+      "📌 PDCP Centre, V.A. Rufino Cor. Salcedo Village, Makati City, Philippines",
+      "🗓️ February 13, 2023 - May 30, 2023",
+      `📝 Trained and well-oriented on how to handle and develop web projects. Trained on how to create reports, how to deal with project concerns or issues, how to make solutions
+effectively and on how to communicate with other work mates. Handled one client-based project during the internship.
+`,
+    ],
   },
 ]);
 
