@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-1">
+  <div class="banner-1" id="home">
     <!-- NavBar -->
     <nav
       class="container px-6 mx-auto md:flex md:justify-between md:items-center"
@@ -34,14 +34,34 @@
           class="absolute top-16 right-0 w-full max-w-xs bg-white shadow-md z-50 md:hidden"
         >
           <ul class="flex flex-col space-y-4 p-4">
-            <li><a href="#" class="text-xl">Home</a></li>
-            <li><a href="#work" v-smooth-scroll class="text-xl">Works</a></li>
-            <li>
-              <a href="#testimonial" v-smooth-scroll class="text-xl"
-                >Tech Stacks</a
-              >
-            </li>
-            <li><a href="#about" v-smooth-scroll class="text-xl">Others</a></li>
+            <a
+              href="#home"
+              v-smooth-scroll
+              class="text-xl focus:text-blue-500"
+              style="-webkit-tap-highlight-color: transparent"
+              ><li class="text-right">Home</li></a
+            >
+            <a
+              href="#about_me"
+              v-smooth-scroll
+              class="text-xl focus:text-blue-500"
+              style="-webkit-tap-highlight-color: transparent"
+              ><li class="text-right">About Me</li></a
+            >
+            <a
+              href="#work"
+              v-smooth-scroll
+              class="text-xl focus:text-blue-500"
+              style="-webkit-tap-highlight-color: transparent"
+              ><li class="text-right">Works</li></a
+            >
+            <a
+              href="#others"
+              v-smooth-scroll
+              class="text-xl focus:text-blue-500"
+              style="-webkit-tap-highlight-color: transparent"
+              ><li class="text-right">Others</li></a
+            >
           </ul>
         </div>
 
@@ -49,13 +69,17 @@
           :class="showMenu ? 'hidden' : 'hidden md:flex'"
           class="flex flex-col md:flex-row md:space-x-10 space-y-4 md:space-y-0"
         >
-          <li class="menu-button"><a href="#">Home</a></li>
-          <li class="menu-button"><a href="#work" v-smooth-scroll>Works</a></li>
-          <li class="menu-button">
-            <a href="#testimonial" v-smooth-scroll>Tech Stacks</a>
+          <li class="menu-button hover:text-blue-500">
+            <a href="#home" v-smooth-scroll>Home</a>
           </li>
-          <li class="menu-button">
-            <a href="#about" v-smooth-scroll>Others</a>
+          <li class="menu-button hover:text-blue-500">
+            <a href="#about_me" v-smooth-scroll>About Me</a>
+          </li>
+          <li class="menu-button hover:text-blue-500">
+            <a href="#work" v-smooth-scroll>Works</a>
+          </li>
+          <li class="menu-button hover:text-blue-500">
+            <a href="#others" v-smooth-scroll>Others</a>
           </li>
         </ul>
       </div>
@@ -65,9 +89,10 @@
     <div class="flex items-center">
       <div class="w-11/12 space-y-5 md:space-y-10">
         <h3
-          class="hello-button text-gray-700 w-fit md:py-3 md:px-5 py-1 px-2 rounded-lg 3xl:text-3xl 2xl:text-xl lg:text-xl md:text-md text-sm font-semibold font-work_sans"
+          style="background-color: #337e96"
+          class="hello-button text-white w-fit md:py-3 md:px-5 py-1 px-2 rounded-lg 3xl:text-3xl 2xl:text-xl lg:text-xl md:text-md text-sm font-semibold font-work_sans"
         >
-          👋 Hello there,
+          Hello there!
         </h3>
         <h1
           class="3xl:text-8xl 2xl:text-7xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-xl font-Eczar font-bold leading-tight text-gray-700"
@@ -83,11 +108,15 @@
         </h1>
 
         <div class="md:flex gap-1 md:gap-10">
-          <button class="text-white bg-gray-800 submit-button hidden md:block">
+          <button
+            class="text-white submit-button hidden md:block"
+            style="background-color: #337e96"
+          >
             View My Work
           </button>
           <button
-            class="text-gray-800 border-4 border-gray-800 submit-button mb-5 md:mb-0"
+            class="border-4 submit-button mb-5 md:mb-0"
+            style="border-color: #337e96; color: #337e96"
           >
             Contact Me
           </button>
@@ -104,20 +133,24 @@
     </div>
   </div>
 
-  <div class="banner-2 space-y-10 pb-20" id="work">
-    <h3 class="heading3 my-5">My Recent Work</h3>
-    <div class="card">
+  <div class="banner-2 space-y-10 pb-20" id="about_me">
+    <h3 class="heading3" style="color: white">About Me</h3>
+    <div class="card about_me_card">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title item">Sheepify States</h4>
-        <p class="font-work_sans pr-12">
-          Designed some empty state screens in kawaii style for the popular
-          sheepify app.Tailwind lets you conditionally apply utility classes in
-          different states using variant modifiers. For example, use hover:gap-6
-          to only apply the gap-6 utility
+        <h4 class="project-title item">What's up!</h4>
+        <p class="font-work_sans pr-12 text-justify">
+          I am a full-stack web developer with 2 years experience in the
+          industry. I am passionate and well-trained about designing, coding,
+          testing, analyzing, making solutions, reports and modifying websites
+          or systems to meet client specifications. I seek to mold my expertise
+          in terms of problem-solving skills, and proficiency in core materials
+          used in creating systematical products. Also, to expand my knowledge
+          and use it to contribute to the success and growth of your company as
+          part of a dynamic and forward-thinking work environment.
         </p>
-        <button class="text-sky-800 font-bold text-2xl tracking-wider">
+        <!-- <button class="text-sky-800 font-bold text-2xl tracking-wider">
           View Case Study
-        </button>
+        </button> -->
       </div>
       <div class="card-image bg-green-100">
         <img
@@ -127,18 +160,17 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card about_me_card">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title item">Sheepify States</h4>
-        <p class="font-work_sans pr-12">
-          Designed some empty state screens in kawaii style for the popular
-          sheepify app.Tailwind lets you conditionally apply utility classes in
-          different states using variant modifiers. For example, use hover:gap-6
-          to only apply the gap-6 utility
+        <h4 class="project-title item">My Hobbies?</h4>
+        <p class="font-work_sans pr-12 text-justify">
+          I love to play online games like mmorpg, strategic and collaborative
+          games. I also play guitar and I love to sing while playing the
+          instrument.
         </p>
-        <button class="text-sky-800 font-bold text-2xl tracking-wider">
+        <!-- <button class="text-sky-800 font-bold text-2xl tracking-wider">
           View Case Study
-        </button>
+        </button> -->
       </div>
       <div class="card-image">
         <img
@@ -148,18 +180,17 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card about_me_card">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title">Sheepify States</h4>
-        <p class="font-work_sans pr-12">
-          Designed some empty state screens in kawaii style for the popular
-          sheepify app.Tailwind lets you conditionally apply utility classes in
-          different states using variant modifiers. For example, use hover:gap-6
-          to only apply the gap-6 utility
+        <h4 class="project-title">How's study?</h4>
+        <p class="font-work_sans pr-12 text-justify">
+          I graduated at First Asia Institute of Technology and Humanities
+          (FAITH Colleges) with Bachelor of Science in Information Technology
+          located at Tanauan City, Batangas, Philippines.
         </p>
-        <button class="text-sky-800 font-bold text-2xl tracking-wider">
+        <!-- <button class="text-sky-800 font-bold text-2xl tracking-wider">
           View Case Study
-        </button>
+        </button> -->
       </div>
       <div class="card-image bg-green-100">
         <img
@@ -170,11 +201,11 @@
     </div>
   </div>
 
-  <div class="banner-1" id="testimonial">
+  <div class="banner-1" id="work">
     <div class="space-y-4 grid place-items-center mt-5">
-      <h3 class="heading3">Some Generous Words</h3>
+      <h3 class="heading3">My Professional Expertise</h3>
       <p class="font-work_sans text-gray-600 font-semibold leading-relaxed">
-        Some of my favorite testimonials from my clients
+        <!-- My Professional Expertise -->
       </p>
     </div>
     <div class="max-w-6xl mx-auto px-8 py-16">
@@ -221,14 +252,14 @@
                 supporting everything from getting paid by users around the
                 world to enabling ACH payments for corporate customers.
               </p>
-              <p class="mt-6">
+              <!-- <p class="mt-6">
                 <a
                   href="#"
                   class="font-medium text-indigo-600 hover:text-indigo-900"
                 >
                   &rarr; Md Solaiman Hossain</a
                 >
-              </p>
+              </p> -->
             </div>
           </div>
         </div>
@@ -266,7 +297,7 @@
     </div>
   </div>
 
-  <div class="banner-2 md:flex items-center md:justify-evenly" id="about">
+  <div class="banner-2 md:flex items-center md:justify-evenly" id="others">
     <img
       class="md:h-[500px] h-[400px]"
       src="./assets/about-female.png"
@@ -389,3 +420,5 @@ export default {
   },
 };
 </script>
+
+<style scoped></style>
