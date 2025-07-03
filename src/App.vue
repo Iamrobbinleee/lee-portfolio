@@ -218,6 +218,31 @@
         />
       </div>
     </div>
+<!-- Markee -->
+    <div class="relative overflow-hidden w-full py-4">
+      <div
+        class="flex animate-marquee gap-20 w-max"
+        @mouseover="pause = true"
+        @mouseleave="pause = false"
+        :class="{ 'paused': pause }"
+      >
+        <img
+          v-for="(logo, index) in logos"
+          :key="index"
+          :src="logo"
+          alt="logo"
+          class="h-16 w-auto object-contain"
+        />
+        <!-- <img
+          v-for="(logo, index) in logos"
+          :key="'dup-' + index"
+          :src="logo"
+          alt="logo"
+          class="h-16 w-auto object-contain"
+        /> -->
+      </div>
+    </div>
+ <!-- End Markee -->
   </div>
 
   <div class="banner-1" id="work">
@@ -459,7 +484,7 @@ specifications. Daily/Weekly scrum, retrospective and sprint planning/meetings.
     title: "Web Developer Intern",
     list: [
       "🏢 Diwa Learning Systems Inc",
-      "📌 PDCP Centre, V.A. Rufino Cor. Salcedo Village, Makati City, Philippines",
+      "📌DCP Centre, V.A. Rufino Cor. Salcedo Village, Makati City, Philippines",
       "🗓️ February 13, 2023 - May 30, 2023",
       `📝 Trained and well-oriented on how to handle and develop web projects. Trained on how to create reports, how to deal with project concerns or issues, how to make solutions
 effectively and on how to communicate with other work mates. Handled one client-based project during the internship.
@@ -478,6 +503,36 @@ const prevSlide = () => {
   activeIndex.value =
     (activeIndex.value - 1 + slides.value.length) % slides.value.length;
 };
+
+const logos = [
+  'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+  'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+  'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+  'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+  'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+  'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+  'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+  'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+  'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+  'https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png',
+  
+]
+
+const pause = ref(false)
 </script>
 
-<style scoped></style>
+<style scoped>
+@keyframes marquee {
+  50% { transform: translateX(50%); }
+  -50% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+</style>
