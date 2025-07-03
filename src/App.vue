@@ -218,20 +218,21 @@
       </div>
     </div>
 <!-- Markee -->
-    <div class="relative overflow-hidden w-full py-4">
+    <div class="relative overflow-hidden bg-white w-full p-3" style="border-radius: 20px;">
       <!-- <div
         class="flex animate-marquee gap-20 w-max"
         @mouseover="pause = true"
         @mouseleave="pause = false"
         :class="{ 'paused': pause }"
       > -->
-      <div class="flex animate-marquee gap-20 w-max">
+      <div class="flex animate-marquee gap-20 w-max" id="div_marquee_logo">
         <img
           v-for="(logo, index) in logos"
           :key="index"
           :src="logo"
           alt="logo"
           class="h-16 w-auto object-contain"
+          id="marquee_logo"
         />
         <!-- <img
           v-for="(logo, index) in logos"
@@ -532,14 +533,14 @@ const prevSlide = () => {
 
 const logos = [
   'https://cdn.simpleicons.org/github/000000',
-  'https://cdn.simpleicons.org/jira/000000',
-  'https://cdn.simpleicons.org/postman/000000',
-  'https://cdn.simpleicons.org/sublimetext/000000',
+  'https://cdn.simpleicons.org/jira/3878d1',
+  'https://cdn.simpleicons.org/postman/cc781f',
+  'https://cdn.simpleicons.org/sublimetext/e0aa22',
   'https://cdn.simpleicons.org/mysql/000000',
-  'https://cdn.simpleicons.org/laragon/000000',
-  'https://cdn.simpleicons.org/canva/000000',
-  'https://cdn.simpleicons.org/laravel/000000',  
-  'https://cdn.simpleicons.org/vue.js/000000',  
+  'https://cdn.simpleicons.org/laragon/489cab',
+  'https://cdn.simpleicons.org/canva/2e9db0',
+  'https://cdn.simpleicons.org/laravel/b03f2e',  
+  'https://cdn.simpleicons.org/vue.js/2a6933',  
 ]
 
 const pause = ref(false)
@@ -548,7 +549,6 @@ const pause = ref(false)
 <style scoped>
 @keyframes marquee {
   50% { transform: translateX(50%); }
-  -50% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
@@ -557,6 +557,25 @@ const pause = ref(false)
 
 .paused {
   animation-play-state: paused;
+}
+
+/* for mobile */
+@media (max-width: 768px) {
+  #marquee_logo{
+    max-width: 20px;
+  }
+  #div_marquee_logo{
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #marquee_logo{
+    max-width: 20px;
+  }
+  #div_marquee_logo{
+    gap: 15px;
+  }
 }
 
 </style>
