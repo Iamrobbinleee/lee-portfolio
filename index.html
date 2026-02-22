@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lee's Portfolio 2025</title>
+  <title>Lee's Portfolio</title>
   
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -47,8 +47,10 @@
     }
     .left-section { background-color: var(--dark-color); color: var(--text-light); padding: 2rem; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); }
     .profile { text-align: center; margin-bottom: 2rem; }
-    .profile-img { margin-left: 15px; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid var(--primary-color); margin-bottom: 1rem; transition: all 0.3s ease; }
-    .profile-img:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+    /* .profile-img { margin-left: 15px; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid var(--primary-color); margin-bottom: 1rem; transition: all 0.3s ease; } */
+    .profile-img { margin-left: 15px; width: 150px; height: 150px; border: 5px solid var(--primary-color); margin-bottom: 1rem; transition: all 0.3s ease; }
+    /* .profile-img:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); } */
+    .profile-img:hover { content: url('https://res.cloudinary.com/dyuan83wz/image/upload/v1771757485/techlee_tirv73.png'); transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
     .sidebar-nav { margin-top: 2rem; width: 100%; margin-left: -20px; }
     .sidebar-nav ul { list-style: none; }
     .sidebar-nav li { margin-bottom: 1rem; }
@@ -86,6 +88,24 @@
       .right-section { border-top: 1px solid #e1e1e1; }
     }
     @media (max-width: 576px) { .skills-list { grid-template-columns: 1fr; } }
+
+    .profile-grid-adjust {
+    margin-bottom: 0 !important;
+  }
+
+  #aboutImage {
+    height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .profile-grid-adjust {
+      margin-bottom: -200px !important;
+    }
+
+    #aboutImage {
+      height: 75% !important; 
+    }
+  }
   </style>
 </head>
 
@@ -118,9 +138,9 @@
         <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-white">Profile Summary</h2>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 profile-grid-adjust">
         <div class="animate-fade-in delay-1">
-          <img src="https://res.cloudinary.com/dyuan83wz/image/upload/Image_20250705_122820_x77qme.png" alt="Lee Robin Roxas Profile" class="rounded-xl shadow-md w-full" style="max-height: 100%; margin-bottom: -100px;"/>
+          <img src="https://res.cloudinary.com/dyuan83wz/image/upload/v1771757539/Image_20260124_215942_351_y2jz4q.jpg" id="aboutImage" alt="Lee Robin Roxas Profile" class="aboutImage rounded-xl shadow-md w-full"/>
           <!-- <br>
           <span style="color: white;">Code</span> -->
         </div>
@@ -598,7 +618,7 @@ createApp({
         'https://cdn.simpleicons.org/sublimetext/e0aa22',
         'https://cdn.simpleicons.org/mysql/ffffff',
         'https://cdn.simpleicons.org/laragon/489cab',
-        'https://cdn.simpleicons.org/canva/2e9db0',
+        'https://cdn.simpleicons.org/bootstrap/7952B3',
         'https://cdn.simpleicons.org/node.js/2a6933',
         'https://cdn.simpleicons.org/laravel/b03f2e',  
         'https://cdn.simpleicons.org/php/777BB4',  
